@@ -1,7 +1,6 @@
 # A game in the console created with the pygame library
 # Game origin: https://ellibrodepython.com/juego-pygame
-import pygame  
-import sys
+import pygame, sys  
 
 pygame.init()
 
