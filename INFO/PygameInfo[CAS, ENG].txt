@@ -1,0 +1,386 @@
+CASTELLANO:
+
+1. Inicialización y control general
+
+pygame.init()	            Inicializa los módulos de Pygame.
+pygame.quit()	            Cierra los módulos de Pygame.
+pygame.get_init()	        Comprueba si Pygame está inicializado.
+pygame.get_error()	        Devuelve el mensaje del último error de SDL.
+pygame.set_error()	        Establece un mensaje de error de SDL.
+pygame.get_sdl_version()    Devuelve la versión de SDL.
+
+2. Ventana y pantalla:
+
+pygame.display.set_mode()	        Crea la ventana del juego.
+pygame.display.set_caption()	    Cambia el título de la ventana.
+pygame.display.get_caption()	    Obtiene el título de la ventana.
+pygame.display.flip()	            Actualiza toda la pantalla.
+pygame.display.update()	            Actualiza toda la pantalla o zonas concretas.
+pygame.display.get_surface()	    Devuelve la superficie de la pantalla.
+pygame.display.get_window_size()	Obtiene las dimensiones de la ventana.
+pygame.display.get_desktop_sizes()	Obtiene los tamaños de las pantallas disponibles.
+pygame.display.toggle_fullscreen()	Alterna entre ventana y pantalla completa.
+pygame.display.set_icon()	        Establece el icono de la ventana.
+pygame.display.get_active()	        Comprueba si la pantalla está activa.
+pygame.display.quit()	            Cierra el módulo de pantalla.
+pygame.display.init()	            Inicializa el módulo de pantalla.
+
+3. Dibujar figuras:
+
+pygame.draw.rect()	    Dibuja un rectángulo.
+pygame.draw.circle()	Dibuja un círculo.
+pygame.draw.ellipse()	Dibuja una elipse.
+pygame.draw.line()	    Dibuja una línea.
+pygame.draw.lines()	    Dibuja varias líneas conectadas.
+pygame.draw.aaline()	Dibuja una línea suavizada.
+pygame.draw.aalines()	Dibuja varias líneas suavizadas.
+pygame.draw.polygon()	Dibuja un polígono.
+pygame.draw.arc()	    Dibuja un arco.
+
+4. Rectángulos y colisiones:
+
+Método o atributo	            Para qué sirve
+pygame.Rect(x, y, w, h)	        Crea un rectángulo.
+player.move(x, y)	            Devuelve un rectángulo desplazado.
+player.move_ip(x, y)	        Desplaza el rectángulo original.
+player.colliderect(other)	    Comprueba si dos rectángulos se solapan.
+player.collidepoint(x, y)	    Comprueba si un punto está dentro.
+player.clamp(rect)	            Devuelve una posición limitada a otro rectángulo.
+player.clamp_ip(rect)	        Limita el rectángulo original.
+player.contains(other)	        Comprueba si contiene otro rectángulo.
+player.union(other)	            Devuelve el rectángulo que engloba ambos.
+player.inflate(x, y)	        Devuelve un rectángulo redimensionado.
+player.normalize()	            Corrige dimensiones negativas.
+player.copy()	                Crea una copia.
+player.x, player.y	            Coordenadas de la esquina superior izquierda.
+player.width, player.height	    Anchura y altura.
+player.center	                Coordenadas del centro.
+player.left, player.right	    Bordes izquierdo y derecho.
+player.top, player.bottom	    Bordes superior e inferior.
+
+5. Eventos:
+
+pygame.event.get()	        Obtiene los eventos pendientes.
+pygame.event.poll()	        Obtiene un evento o devuelve uno vacío.
+pygame.event.wait()	        Espera hasta que ocurra un evento.
+pygame.event.clear()	    Elimina eventos pendientes.
+pygame.event.pump()	        Actualiza el sistema de eventos.
+pygame.event.post()	        Añade un evento a la cola.
+pygame.event.peek()	        Comprueba si hay eventos de determinados tipos.
+pygame.event.set_blocked()	Bloquea tipos de eventos.
+pygame.event.set_allowed()	Permite tipos de eventos.
+pygame.event.custom_type()	Reserva un tipo de evento personalizado.
+
+6. Teclado:
+
+pygame.key.get_pressed()	    Devuelve el estado actual de las teclas.
+pygame.key.get_focused()	    Comprueba si la ventana tiene el foco.
+pygame.key.get_mods()	        Obtiene modificadores como Shift y Ctrl.
+pygame.key.name(key)	        Obtiene el nombre de una tecla.
+pygame.key.set_repeat()	        Configura la repetición de teclas mantenidas.
+pygame.key.start_text_input()	Inicia la entrada de texto.
+pygame.key.stop_text_input()	Detiene la entrada de texto.
+
+7. Ratón:
+
+pygame.mouse.get_pos()	        Obtiene la posición del ratón.
+pygame.mouse.get_pressed()	    Comprueba qué botones están pulsados.
+pygame.mouse.set_pos()	        Cambia la posición del ratón.
+pygame.mouse.get_rel()	        Obtiene el desplazamiento relativo.
+pygame.mouse.set_visible()	    Muestra u oculta el cursor.
+pygame.mouse.get_visible()	    Comprueba si el cursor es visible.
+pygame.mouse.set_cursor()	    Cambia el cursor.
+
+8. Tiempo y FPS:
+
+pygame.time.Clock()	        Crea un reloj para controlar los FPS.
+clock.tick(fps)	            Limita la frecuencia de fotogramas.
+clock.get_fps()	            Obtiene los FPS aproximados.
+pygame.time.delay(ms)	    Espera aproximadamente los milisegundos indicados.
+pygame.time.wait(ms)	    Espera un tiempo.
+pygame.time.get_ticks()	    Milisegundos transcurridos desde la inicialización.
+pygame.time.set_timer()	    Genera eventos a intervalos.
+pygame.time.get_timer()	    Consulta el temporizador de un evento, cuando está disponible.
+
+9. Imágenes:
+
+pygame.image.load()	            Carga una imagen desde un archivo.
+pygame.image.save()	            Guarda una superficie como imagen.
+pygame.image.get_extended()	    Comprueba la disponibilidad de formatos adicionales.
+
+10. Superfícies:
+
+screen.fill(color)	            Rellena la superficie con un color.
+screen.blit(source, position)	Dibuja una imagen sobre otra superficie.
+screen.get_rect()	            Obtiene un rectángulo con sus dimensiones.
+screen.get_size()	            Devuelve anchura y altura.
+screen.copy()	                Copia la superficie.
+screen.convert()	            Convierte el formato para dibujar con eficiencia.
+screen.convert_alpha()	        Convierte la superficie conservando la transparencia.
+screen.set_alpha()	            Establece la transparencia global.
+screen.get_at(pos)	            Lee el color de un píxel.
+screen.set_at(pos, color)	    Cambia el color de un píxel.
+screen.subsurface(rect)	        Crea una vista de una región.
+screen.scroll(dx, dy)	        Desplaza los píxeles de la superficie.
+
+11. Texto:
+
+pygame.font.init()	        Inicializa las fuentes.
+pygame.font.Font()	        Crea una fuente desde un archivo o la predeterminada.
+pygame.font.SysFont()	    Busca una fuente instalada en el sistema.
+pygame.font.get_fonts()	    Obtiene las familias de fuentes disponibles.
+font.render()	            Genera una superficie con texto.
+font.size()	                Calcula el tamaño del texto.
+font.get_height()	        Obtiene la altura de la fuente.
+font.get_linesize()	        Obtiene la separación entre líneas.
+
+12. Transformaciones: 
+
+pygame.transform.scale()	        Cambia el tamaño de una imagen.
+pygame.transform.scale_by()	        Escala una imagen mediante un factor.
+pygame.transform.smoothscale()	    Cambia el tamaño suavizando el resultado.
+pygame.transform.rotate()	        Rota una superficie.
+pygame.transform.flip()	            Invierte horizontal o verticalmente.
+pygame.transform.rotozoom()	        Rota y escala con suavizado.
+pygame.transform.average_color()	Calcula el color medio de una superficie.
+
+13. Sonidos:
+
+pygame.mixer.init()	                Inicializa el sistema de audio.
+pygame.mixer.Sound()	            Carga un efecto de sonido.
+sound.play()	                    Reproduce un efecto.
+sound.stop()	                    Detiene un efecto.
+sound.set_volume()	                Cambia el volumen de un efecto.
+pygame.mixer.Channel()	            Accede a un canal de audio.
+pygame.mixer.set_num_channels()	    Configura el número de canales.
+pygame.mixer.stop()	                Detiene la reproducción de efectos.
+pygame.mixer.music.load()	        Carga música de fondo.
+pygame.mixer.music.play()	        Reproduce música.
+pygame.mixer.music.pause()	        Pausa la música.
+pygame.mixer.music.unpause()	    Reanuda la música.
+pygame.mixer.music.stop()	        Detiene la música.
+pygame.mixer.music.set_volume()	    Cambia el volumen de la música.
+pygame.mixer.music.fadeout()	    Reduce el volumen hasta detenerla.
+
+14. Sprites: 
+
+pygame.sprite.Sprite()	        Clase base para un objeto del juego.
+pygame.sprite.Group()	        Crea un grupo de sprites.
+group.add()	                    Añade sprites.
+group.remove()	                Elimina sprites.
+group.update()	                Ejecuta el método update() de los sprites del grupo.
+group.draw()	                Dibuja los sprites que tienen image y rect.
+pygame.sprite.spritecollide()	Detecta colisiones entre un sprite y un grupo.
+pygame.sprite.groupcollide()	Detecta colisiones entre dos grupos.
+pygame.sprite.collide_rect()	Comprueba colisiones rectangulares.
+pygame.sprite.collide_circle()	Comprueba colisiones circulares.
+pygame.sprite.collide_mask()	Comprueba colisiones mediante máscaras.
+
+15. Módulos adicionales
+
+pygame.mask	        Colisiones precisas por píxel.
+pygame.math	        Vectores y cálculos geométricos.
+pygame.gfxdraw	    Dibujo de formas con suavizado adicional.
+pygame.joystick	    Mandos y joysticks.
+pygame.midi	        Entrada y salida MIDI.
+pygame.camera	    Captura de vídeo desde cámaras compatibles.
+pygame.scrap	    Acceso al portapapeles.
+pygame.surfarray	Manipulación de píxeles mediante arrays.
+pygame.pixelcopy	Copia de datos de píxeles.
+pygame.cursors	    Creación y gestión de cursores.
+pygame.freetype	    Renderizado avanzado de fuentes.
+pygame.version	    Información sobre la versión instalada.
+
+
+ENGLISH:
+
+1. Initialization and general control
+
+pygame.init()                  Initializes the Pygame modules.
+pygame.quit()                  Shuts down the Pygame modules.
+pygame.get_init()              Checks whether Pygame is initialized.
+pygame.get_error()             Returns the last SDL error message.
+pygame.set_error()             Sets an SDL error message.
+pygame.get_sdl_version()       Returns the SDL version.
+
+2. Window and display:
+
+pygame.display.set_mode()          Creates the game window.
+pygame.display.set_caption()       Changes the window title.
+pygame.display.get_caption()       Gets the window title.
+pygame.display.flip()              Updates the entire screen.
+pygame.display.update()            Updates the entire screen or specific areas.
+pygame.display.get_surface()       Returns the display surface.
+pygame.display.get_window_size()   Gets the window dimensions.
+pygame.display.get_desktop_sizes() Gets the available display sizes.
+pygame.display.toggle_fullscreen() Toggles between windowed and fullscreen mode.
+pygame.display.set_icon()          Sets the window icon.
+pygame.display.get_active()        Checks whether the display is active.
+pygame.display.quit()              Shuts down the display module.
+pygame.display.init()              Initializes the display module.
+
+3. Drawing shapes:
+
+pygame.draw.rect()       Draws a rectangle.
+pygame.draw.circle()     Draws a circle.
+pygame.draw.ellipse()    Draws an ellipse.
+pygame.draw.line()       Draws a line.
+pygame.draw.lines()      Draws multiple connected lines.
+pygame.draw.aaline()     Draws an antialiased line.
+pygame.draw.aalines()    Draws multiple antialiased lines.
+pygame.draw.polygon()    Draws a polygon.
+pygame.draw.arc()        Draws an arc.
+
+4. Rectangles and collisions:
+
+Method or attribute                 Purpose
+pygame.Rect(x, y, w, h)             Creates a rectangle.
+player.move(x, y)                   Returns a moved rectangle.
+player.move_ip(x, y)                Moves the original rectangle.
+player.colliderect(other)           Checks whether two rectangles overlap.
+player.collidepoint(x, y)            Checks whether a point is inside.
+player.clamp(rect)                  Returns a rectangle constrained to another rectangle.
+player.clamp_ip(rect)               Constrains the original rectangle.
+player.contains(other)              Checks whether it contains another rectangle.
+player.union(other)                 Returns a rectangle enclosing both.
+player.inflate(x, y)                Returns a resized rectangle.
+player.normalize()                  Corrects negative dimensions.
+player.copy()                       Creates a copy.
+player.x, player.y                  Coordinates of the top-left corner.
+player.width, player.height         Width and height.
+player.center                       Center coordinates.
+player.left, player.right           Left and right edges.
+player.top, player.bottom           Top and bottom edges.
+
+5. Events:
+
+pygame.event.get()          Retrieves pending events.
+pygame.event.poll()         Retrieves an event or returns an empty event.
+pygame.event.wait()         Waits until an event occurs.
+pygame.event.clear()        Removes pending events.
+pygame.event.pump()         Updates the event system.
+pygame.event.post()         Adds an event to the queue.
+pygame.event.peek()         Checks for events of specific types.
+pygame.event.set_blocked()  Blocks event types.
+pygame.event.set_allowed()  Allows event types.
+pygame.event.custom_type()  Reserves a custom event type.
+
+6. Keyboard:
+
+pygame.key.get_pressed()       Returns the current state of the keys.
+pygame.key.get_focused()       Checks whether the window has keyboard focus.
+pygame.key.get_mods()          Gets modifiers such as Shift and Ctrl.
+pygame.key.name(key)           Gets the name of a key.
+pygame.key.set_repeat()        Configures key repeat when keys are held down.
+pygame.key.start_text_input()  Starts text input.
+pygame.key.stop_text_input()   Stops text input.
+
+7. Mouse:
+
+pygame.mouse.get_pos()       Gets the mouse position.
+pygame.mouse.get_pressed()   Checks which buttons are pressed.
+pygame.mouse.set_pos()       Changes the mouse position.
+pygame.mouse.get_rel()       Gets the relative mouse movement.
+pygame.mouse.set_visible()   Shows or hides the cursor.
+pygame.mouse.get_visible()   Checks whether the cursor is visible.
+pygame.mouse.set_cursor()    Changes the cursor.
+
+8. Time and FPS:
+
+pygame.time.Clock()       Creates a clock to control FPS.
+clock.tick(fps)            Limits the frame rate.
+clock.get_fps()            Gets the approximate FPS.
+pygame.time.delay(ms)     Waits for approximately the specified milliseconds.
+pygame.time.wait(ms)      Waits for a specified amount of time.
+pygame.time.get_ticks()   Gets milliseconds elapsed since initialization.
+pygame.time.set_timer()  Generates events at intervals.
+pygame.time.get_timer()  Gets an event timer, when available.
+
+9. Images:
+
+pygame.image.load()          Loads an image from a file.
+pygame.image.save()          Saves a surface as an image.
+pygame.image.get_extended()  Checks whether additional image formats are available.
+
+10. Surfaces:
+
+screen.fill(color)              Fills the surface with a color.
+screen.blit(source, position)   Draws an image onto another surface.
+screen.get_rect()               Gets a rectangle matching its dimensions.
+screen.get_size()               Returns the width and height.
+screen.copy()                   Copies the surface.
+screen.convert()                Converts the format for efficient drawing.
+screen.convert_alpha()          Converts the surface while preserving transparency.
+screen.set_alpha()              Sets the overall transparency.
+screen.get_at(pos)              Reads the color of a pixel.
+screen.set_at(pos, color)       Changes the color of a pixel.
+screen.subsurface(rect)         Creates a view of a region.
+screen.scroll(dx, dy)            Scrolls the surface pixels.
+
+11. Text:
+
+pygame.font.init()          Initializes the font module.
+pygame.font.Font()          Creates a font from a file or the default font.
+pygame.font.SysFont()       Finds a system-installed font.
+pygame.font.get_fonts()     Gets the available font families.
+font.render()               Creates a surface containing text.
+font.size()                 Calculates the size of the text.
+font.get_height()           Gets the font height.
+font.get_linesize()         Gets the line spacing.
+
+12. Transformations:
+
+pygame.transform.scale()          Resizes an image.
+pygame.transform.scale_by()       Scales an image by a factor.
+pygame.transform.smoothscale()   Resizes an image with smoothing.
+pygame.transform.rotate()         Rotates a surface.
+pygame.transform.flip()           Flips horizontally or vertically.
+pygame.transform.rotozoom()       Rotates and scales with smoothing.
+pygame.transform.average_color()  Calculates the average color of a surface.
+
+13. Sound:
+
+pygame.mixer.init()                 Initializes the audio system.
+pygame.mixer.Sound()                Loads a sound effect.
+sound.play()                        Plays a sound effect.
+sound.stop()                        Stops a sound effect.
+sound.set_volume()                  Changes the volume of a sound effect.
+pygame.mixer.Channel()              Accesses an audio channel.
+pygame.mixer.set_num_channels()     Sets the number of channels.
+pygame.mixer.stop()                 Stops sound effect playback.
+pygame.mixer.music.load()           Loads background music.
+pygame.mixer.music.play()           Plays music.
+pygame.mixer.music.pause()          Pauses the music.
+pygame.mixer.music.unpause()        Resumes the music.
+pygame.mixer.music.stop()           Stops the music.
+pygame.mixer.music.set_volume()     Changes the music volume.
+pygame.mixer.music.fadeout()        Gradually lowers the volume until playback stops.
+
+14. Sprites:
+
+pygame.sprite.Sprite()           Base class for a game object.
+pygame.sprite.Group()            Creates a sprite group.
+group.add()                       Adds sprites.
+group.remove()                    Removes sprites.
+group.update()                    Calls the update() method of the group's sprites.
+group.draw()                      Draws sprites that have image and rect attributes.
+pygame.sprite.spritecollide()     Detects collisions between a sprite and a group.
+pygame.sprite.groupcollide()      Detects collisions between two groups.
+pygame.sprite.collide_rect()      Checks for rectangular collisions.
+pygame.sprite.collide_circle()    Checks for circular collisions.
+pygame.sprite.collide_mask()      Checks for collisions using masks.
+
+15. Additional modules
+
+pygame.mask       Pixel-perfect collision detection.
+pygame.math       Vectors and geometric calculations.
+pygame.gfxdraw    Drawing shapes with additional antialiasing.
+pygame.joystick   Game controllers and joysticks.
+pygame.midi       MIDI input and output.
+pygame.camera     Video capture from supported cameras.
+pygame.scrap      Clipboard access.
+pygame.surfarray  Pixel manipulation using arrays.
+pygame.pixelcopy  Copying pixel data.
+pygame.cursors    Cursor creation and management.
+pygame.freetype   Advanced font rendering.
+pygame.version    Information about the installed version.

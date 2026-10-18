@@ -8,6 +8,7 @@ wide, tall = 400, 300
 screen = pygame.display.set_mode((wide, tall))
 pygame.display.set_caption("Console test")
 
+colour = input("Do you want red, green or blue? ").lower()
 player = pygame.Rect(50, 50, 20, 20)
 speed = 5
 
@@ -21,7 +22,7 @@ while True:
             pygame.quit()
             sys.exit()
 
-    # Keyboard inputs
+
     keys = pygame.key.get_pressed()
 
     # Changes the direction speed of a movement when holding certain keys
@@ -33,9 +34,18 @@ while True:
         player.y -= speed
     if keys[pygame.K_DOWN]: 
         player.y += speed
-        
-    screen.fill((0, 0, 0))
-    pygame.draw.rect(screen, (0, 255, 0), player)
+
+        # Changes the screen's color and the player's
+    screen.fill((20, 20, 20))
+    if colour == "red":
+        pygame.draw.rect(screen, (255, 0, 0), player)
+    elif colour == "green":
+        pygame.draw.rect(screen, (0, 255, 0), player)
+    elif colour == "blue":
+        pygame.draw.rect(screen, (0, 0, 255), player)
+    else:
+        pygame.draw.rect(screen, (255, 0, 0), player)
+    # Keyboard inputs
 
     # To keep the player inside the screen
     player.clamp_ip(screen.get_rect())
