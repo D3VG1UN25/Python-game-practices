@@ -26,6 +26,7 @@ while True:
     keys = pygame.key.get_pressed()
 
     # Changes the direction speed of a movement when holding certain keys
+    # Keyboard inputs
     if keys[pygame.K_LEFT]: 
         player.x -= speed
     if keys[pygame.K_RIGHT]: 
@@ -45,7 +46,6 @@ while True:
         pygame.draw.rect(screen, (0, 0, 255), player)
     else:
         pygame.draw.rect(screen, (255, 0, 0), player)
-    # Keyboard inputs
 
     # To keep the player inside the screen
     player.clamp_ip(screen.get_rect())
